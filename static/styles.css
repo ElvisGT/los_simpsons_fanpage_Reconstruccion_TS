@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 63%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8dc00;
+}
+
+.title {
+    margin: 6rem 0; 
+    width: 100%;
+    text-align: center;
+    
+}
+.card-container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+}
+
+.card {
+    min-height: 30rem;
+    width: 35rem;
+    margin: 3rem 0;
+   
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card-img {
+    object-fit: contain;
+    width: 25rem;
+    height: 25rem;
+    margin: 2rem 0;
+}
+
+.btn {
+    font-size: 1.6rem;
+    margin: 2rem 0;
+}
+
+.ring {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.character-details-container{
+    background-color: white;
+    min-height: 100vh;
+    width: 100%;
+}
+.character-details-button {
+    display: flex;
+    justify-content: center;
+}
+
+.searchCharacter-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.searchCharacter {
+    width: 40rem;
+    padding: .5rem;
+    border: .2rem solid grey;
+    border-radius: 1.5rem;
+
+}
+
+.searchCharacter::placeholder {
+    font-style: italic;
+    color: grey;
+}
+
+.searchCharacter:focus {
+    outline: .2rem solid #077EC1;
+}
+
