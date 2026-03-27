@@ -1,16 +1,20 @@
 import { useNavigate,useParams } from "react-router-dom";
 import { useFetchCharacterByID } from "../hooks/useFetchCharacterByID.ts";
 import { getCharacterByName } from '../helpers/getCharacterByName.ts';
+import { useFetchCharacters } from "../hooks/useFetchCharacters.ts";
 
 const CharacterDetails = () => {
     const navigate = useNavigate();
     const param_name = useParams();
     const {name} = param_name;
     //Buscar en la lista de personajes
-    const {id} = getCharacterByName(name);
+    const {characters,loading} = useFetchCharacters();
+    if((name) && (characters)){
+        const {id} = getCharacterByName(characters,name);
+    }
 
     
-    const {character,loading} = useFetchCharacterByID(id);
+    // const {character,loading} = useFetchCharacterByID(id);
 
     const handleBack = () => {
         navigate("/");

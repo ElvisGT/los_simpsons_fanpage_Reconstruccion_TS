@@ -1,9 +1,10 @@
 import { useState,useEffect } from 'react';
 import {getCharacters} from '../helpers/getCharacters';
+import type { CharacterState } from '../interfaces/CharacterState';
 
 export const useFetchCharacters = () => {
-    const [state,setState] = useState({
-        data:[],
+    const [state,setState] = useState<CharacterState>({
+        characters:null,
         loading:true,
     });
 
@@ -11,8 +12,9 @@ export const useFetchCharacters = () => {
     useEffect(() => {
         getCharacters()
             .then(characters => {
+                console.log(characters)
                 setState({
-                    data:characters,
+                    characters:characters,
                     loading:false
                 })
             })
